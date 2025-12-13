@@ -38,17 +38,29 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* LOGO */
 .logo {
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  position: relative;
+  display: grid;
+  place-items: center;
+  height: 50px;
 }
 
-.logo:hover::after {
-  width: 100%;
+.logo img {
+  grid-area: 1 / 1;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  width: 50px;
+}
+
+.logo-hover {
+  opacity: 0;
+}
+
+.logo:hover .logo-hover {
+  opacity: 1;
+}
+
+.logo:hover .logo-default {
+  opacity: 0;
 }
 
 /* LINKS */
@@ -227,10 +239,10 @@ body {
 /* SUBTITLES */
 .subtitle {
   margin-top: 0.75rem;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   font-weight: 400;
   line-height: 1.4;
-  max-width: 28ch;
+  max-width: 35ch;
   opacity: 0.75;
 }
 
