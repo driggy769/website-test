@@ -329,11 +329,38 @@ body {
    ABOUT SECTION
 ========================= */
 .about-section {
+  position: relative;
   padding: 120px 8%;
   background: #ebebeb;
+  overflow: hidden;
+}
+
+/* animated background */
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #ffffff, #b9b9b9, #f5f5f5);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .about-inner {
+  position: relative;
+  z-index: 1;
   max-width: 1000px;
   margin: 0 auto;
   line-height: 1.7;
@@ -350,38 +377,96 @@ body {
   font-size: 1.1rem;
   opacity: 0.9;
   margin-bottom: 20px;
+  transition-delay: var(--delay, 0s);
 }
 
-/* image floated right */
-.about-image {
-  float: right;
-  width: 320px;
-  max-width: 40%;
-  margin: 0 0 24px 32px;
-  object-fit: cover;
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* clearfix (important for floats) */
-.about-inner::after {
-  content: "";
-  display: block;
-  clear: both;
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-  .about-image {
-    float: none;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 32px 0;
-  }
   .about-section {
     padding: 40px 5%;
-    background: #ebebeb;
-    font-size: clamp(0.9rem, 1vw, 1.1rem);
+  }
+
+  .about-inner p {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   PREVIOUS CLIENTS
+========================= */
+
+.clients-heading {
+  margin-top: 64px;
+  margin-bottom: 32px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.client img {
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  height: 100px;
+}
+
+.height-adj {
+  height: 150px;
+}
+
+/* hover polish */
+.client:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.client:hover img {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 1024px) {
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-heading {
+    margin-top: 48px;
   }
 }

@@ -1,137 +1,23 @@
-/* =================================================
-   CONFIG — YOUTUBE API
-================================================= */
-const API_KEY = "AIzaSyDRXu9kE4sVit3W6opZdasW83GnwM7ciiI";
-const CHANNEL_ID = "UC3VLKH3P1dCoy9FNnkQVy0A";
-const MAX_RESULTS = 6;
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
 
-/* =================================================
-   NAVBAR HAMBURGER TOGGLE
-================================================= */
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+  // quick sanity check:
+  console.log("Reveal elements found:", reveals.length);
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-  });
-}
-
-/* =========================
-   SCROLL REVEAL (SAFE)
-========================= */
-const revealSections = document.querySelectorAll(".reveal-section");
-
-if (revealSections.length) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target); // reveal once
+          entry.target.classList.add("active");
+          obs.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.2 }
   );
 
-  revealSections.forEach((section) => {
-    revealObserver.observe(section);
-  });
-}
-
-/* =================================================
-   APPLY STAGGER TO VIDEO CARDS
-================================================= */
-function applyVideoStagger() {
-  const videoCards = document.querySelectorAll(".video-card");
-  videoCards.forEach((card, index) => {
-    card.style.setProperty("--delay", `${index * 0.1}s`);
-  });
-}
-
-/* =================================================
-   LOAD LATEST YOUTUBE VIDEOS
-================================================= */
-async function loadLatestVideos() {
-  const videoGrid = document.getElementById("videoGrid");
-  if (!videoGrid) return;
-
-  const apiUrl =
-    `https://www.googleapis.com/youtube/v3/search?` +
-    `key=${API_KEY}` +
-    `&channelId=${CHANNEL_ID}` +
-    `&part=snippet` +
-    `&order=date` +
-    `&maxResults=${MAX_RESULTS}` +
-    `&type=video`;
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    if (!data.items) return;
-
-    videoGrid.innerHTML = "";
-
-    data.items.forEach((item) => {
-      const videoId = item.id.videoId;
-
-      const card = document.createElement("div");
-      card.className = "video-card";
-
-      card.innerHTML = `
-        <iframe
-          src="https://www.youtube.com/embed/${videoId}"
-          title="${item.snippet.title}"
-          loading="lazy"
-          allowfullscreen
-        ></iframe>
-      `;
-
-      videoGrid.appendChild(card);
-    });
-
-    // Apply stagger AFTER videos are injected
-    applyVideoStagger();
-
-    // Ensure reveal observer sees newly injected content
-    if (revealObserver) {
-      const videoSection = document.querySelector(".video-section");
-      if (videoSection) {
-        revealObserver.observe(videoSection);
-      }
-    }
-  } catch (error) {
-    console.error("YouTube API error:", error);
-  }
-}
-
-/* =================================================
-   INIT ON PAGE LOAD
-================================================= */
-window.addEventListener("load", () => {
-  loadLatestVideos();
+  reveals.forEach((el) => observer.observe(el));
 });
-
-const widgetContainer = document.querySelector(".insta-section");
-
-if (widgetContainer) {
-  const observer = new MutationObserver(() => {
-    widgetContainer
-      .querySelectorAll('a[title="Free Instagram Feed Widget"]')
-      .forEach((link) => {
-        link.style.display = "none";
-        observer.disconnect();
-      });
-  });
-
-  observer.observe(widgetContainer, {
-    childList: true,
-    subtree: true,
-  });
-}
 
 const hero = document.getElementById("hero");
 const leftTitle = document.querySelector(".title.left");
