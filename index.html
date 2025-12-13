@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Space Hero</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Warren Jay Pearson</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav class="navbar">
-      <a href="#hero" class="logo">WarrenInPixels</a>
+      <a href="#hero" class="logo"><img src="images/logo.png" /></a>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
@@ -24,34 +30,27 @@
         <span></span>
       </div>
     </nav>
+    <div id="hero" class="hero">
+      <div class="mobile-image"></div>
 
-    <section class="hero" id="home">
-      <!-- Background -->
-      <div class="nebula"></div>
-
-      <div class="starfield">
-        <div class="fast-stars"></div>
+      <div class="layers" aria-hidden="true">
+        <div class="color"></div>
+        <div class="layer base"></div>
+        <div class="layer reveal"></div>
       </div>
 
-      <!-- Foreground -->
-      <div class="hero-inner">
-        <div class="hero-content">
-          <h1>Design. Create. Enjoy!</h1>
-          <p>
-            Space-themed hero section with pure CSS nebula and twinkling stars.
-          </p>
-        </div>
+      <h1 class="title left">
+        Designer
+        <p class="subtitle">Crafting intuitive, human-centered experiences.</p>
+      </h1>
 
-        <div class="hero-image">
-          <img src="images/avatar.png" alt="Avatar" />
-        </div>
-      </div>
-    </section>
-
+      <h1 class="title right">
+        &lt;coder&gt;
+        <p class="subtitle">Building fast, scalable systems.</p>
+      </h1>
+    </div>
     <section class="about-section" id="about">
       <div class="about-inner">
-        <img src="images/avatar2.png" alt="About me" class="about-image" />
-
         <h2>About Me</h2>
 
         <p>
@@ -77,26 +76,6 @@
         </p>
       </div>
     </section>
-
-    <section class="video-section reveal-section" id="videos">
-      <h2>Latest Videos</h2>
-
-      <!-- Videos injected here via YouTube API -->
-      <div class="video-grid" id="videoGrid"></div>
-    </section>
-
-    <section class="insta-section reveal-section" id="art">
-      <h2>Latest Artwork</h2>
-
-      <!-- Videos injected here via YouTube API -->
-      <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-      <script src="https://elfsightcdn.com/platform.js" async></script>
-      <div
-        class="elfsight-app-0a4ca584-433d-429b-9711-b7d21f725847"
-        data-elfsight-app-lazy
-      ></div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
