@@ -107,3 +107,93 @@ function animate() {
 }
 
 animate();
+
+/* =================================================
+   NAVBAR HAMBURGER TOGGLE
+================================================= */
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  });
+}
+
+/* =================================================
+   SKILLS BAR ANIMATION (REPEATABLE)
+================================================= */
+const skillItems = document.querySelectorAll(".skill");
+
+if (skillItems.length) {
+  const skillObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const skill = entry.target;
+        const level = skill.dataset.level;
+        const fill = skill.querySelector(".skill-fill");
+
+        if (!fill) return;
+
+        if (entry.isIntersecting) {
+          // animate in
+          fill.style.width = `${level}%`;
+        } else {
+          // reset when scrolled away
+          fill.style.width = "0%";
+        }
+      });
+    },
+    {
+      threshold: 0.4,
+    }
+  );
+
+  skillItems.forEach((skill) => skillObserver.observe(skill));
+}
+
+/* =================================================
+   NAV SCROLL SPY
+================================================= */
+const navAnchors = document.querySelectorAll(".nav-links a");
+const pageSections = document.querySelectorAll("section[id]");
+
+if (navAnchors.length && pageSections.length) {
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const id = entry.target.getAttribute("id");
+
+        navAnchors.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${id}`
+          );
+        });
+      });
+    },
+    {
+      rootMargin: "-50% 0px -50% 0px",
+    }
+  );
+
+  pageSections.forEach((section) => navObserver.observe(section));
+}
+
+/* =================================================
+   HERO NAV FALLBACK
+================================================= */
+const heroSection = document.getElementById("hero");
+const heroLink = document.querySelector('.nav-links a[href="#hero"]');
+
+if (heroSection && heroLink) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < window.innerHeight * 0.4) {
+      navAnchors.forEach((link) => link.classList.remove("active"));
+      heroLink.classList.add("active");
+    }
+  });
+}
