@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Hero</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#hero" class="logo">WarrenInPixels</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#art">Art</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <!-- Background -->
+      <div class="nebula"></div>
+
+      <div class="starfield">
+        <div class="fast-stars"></div>
+      </div>
+
+      <!-- Foreground -->
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>Design. Create. Enjoy!</h1>
+          <p>
+            Space-themed hero section with pure CSS nebula and twinkling stars.
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/avatar.png" alt="Avatar" />
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-inner">
+        <img src="images/avatar2.png" alt="About me" class="about-image" />
+
+        <h2>About Me</h2>
+
+        <p>
+          I’m a creator and developer with a passion for building immersive,
+          visually rich experiences on the web. I focus on blending clean,
+          maintainable code with thoughtful design to create interfaces that
+          feel polished, modern, and intentional.
+        </p>
+
+        <p>
+          Over the years, I’ve worked across a range of projects — from
+          interactive front-end experiences to content-driven platforms designed
+          to scale. I enjoy solving problems at the intersection of creativity
+          and logic, and I’m always exploring new ways to improve performance,
+          accessibility, and user experience.
+        </p>
+
+        <p>
+          When I’m not coding, I spend time creating content, experimenting with
+          design systems, and learning new tools that push my workflow forward.
+          This site is a reflection of that journey — a place to showcase work,
+          ideas, and experiments.
+        </p>
+      </div>
+    </section>
+
+    <section class="video-section reveal-section" id="videos">
+      <h2>Latest Videos</h2>
+
+      <!-- Videos injected here via YouTube API -->
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+
+    <section class="insta-section reveal-section" id="art">
+      <h2>Latest Artwork</h2>
+
+      <!-- Videos injected here via YouTube API -->
+      <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div
+        class="elfsight-app-0a4ca584-433d-429b-9711-b7d21f725847"
+        data-elfsight-app-lazy
+      ></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
