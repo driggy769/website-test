@@ -197,3 +197,19 @@ if (heroSection && heroLink) {
     }
   });
 }
+
+/* =================================================
+   CLOSE MOBILE NAV ON LINK CLICK (SMOOTH)
+================================================= */
+const navAnchorLinks = document.querySelectorAll(".nav-links a");
+
+navAnchorLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 900) {
+      setTimeout(() => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+      }, 120);
+    }
+  });
+});
