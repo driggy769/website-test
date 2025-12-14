@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warrenopolis Business Dashboard | Project</title>
+
+    <!-- main site styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- project-specific styles -->
+    <link rel="stylesheet" href="project.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="index.html#hero" class="logo">
+        <img src="images/logo.png" class="logo-default" alt="" />
+        <img src="images/logo-hover.png" class="logo-hover" alt="" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#work" class="active">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- PROJECT PAGE WRAPPER (NEBULA BG) -->
+    <div class="project-page">
+      <!-- HERO -->
+      <header class="project-hero">
+        <img src="images/work/portfolio-5.png" alt="Pearsteen's Burger Joint" />
+        <div class="project-hero-overlay">
+          <div class="project-hero-inner">
+            <h1>Warrenopolis Business Dashboard</h1>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="project-content">
+        <section class="project-text">
+          <h2>
+            Project Overview: React Data Dashboard (Personal Development
+            Project)
+          </h2>
+
+          <p>
+            This project was a self-initiated React application created in my
+            own time, designed to build on the foundations established in my
+            earlier React work. Unlike previous projects, the focus here shifted
+            away from layout and component structure and towards working with
+            datasets and displaying structured information in a meaningful way.
+          </p>
+
+          <p>
+            The application takes the form of a dashboard-style interface,
+            demonstrating how data can be surfaced, organised, and presented
+            within a React environment. It was not built for commercial use, but
+            as a focused learning exercise.
+          </p>
+
+          <h2>Learning Goals & Motivation</h2>
+
+          <p>
+            Following my initial hands-on experience with React, I wanted to
+            deepen my understanding of how applications interact with data. The
+            goal of this project was to learn how to work with datasets and
+            database-style information, and how to render that data dynamically
+            within a user interface.
+          </p>
+
+          <p>
+            This meant thinking beyond static content and focusing on how data
+            flows through an application, how it is stored, and how changes in
+            state affect what the user sees.
+          </p>
+
+          <h2>Development Process</h2>
+
+          <p>
+            The project was structured around consuming and displaying
+            structured datasets within React components. I focused on breaking
+            data into logical units and ensuring it could be passed efficiently
+            through the component tree.
+          </p>
+
+          <p>
+            State management played a key role, allowing the interface to
+            respond dynamically as data changed. This reinforced best practices
+            around component responsibility, reusability, and separation of
+            concerns.
+          </p>
+
+          <h2>Technical Learning & Outcomes</h2>
+
+          <p>
+            Through this project, I gained a clearer understanding of how React
+            can be used to work with datasets and database-driven content.
+            Handling data within state, mapping over datasets, and conditionally
+            rendering content became central parts of the build process.
+          </p>
+
+          <p>
+            This project helped bridge the gap between learning React
+            fundamentals and applying them in more data-driven scenarios,
+            providing valuable experience in building applications that are
+            driven by information rather than static layouts.
+          </p>
+        </section>
+
+        <div class="project-cta">
+          <a
+            href="https://dashboard-lac-psi.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-demo-link"
+          >
+            View live demo →
+          </a>
+        </div>
+
+        <!-- CAROUSEL -->
+        <section class="project-carousel">
+          <h2>Gallery</h2>
+
+          <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Previous image">
+              ‹
+            </button>
+
+            <div class="carousel-track">
+              <img src="images/work/project5/1.png" alt="" />
+              <img src="images/work/project5/2.png" alt="" />
+              <img src="images/work/project5/3.png" alt="" />
+            </div>
+
+            <button class="carousel-btn next" aria-label="Next image">›</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="project.js"></script>
+  </body>
+</html>

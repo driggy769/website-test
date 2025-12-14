@@ -11,6 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <nav class="navbar">
@@ -24,7 +31,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#work">Work</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="hamburger" id="hamburger">
@@ -249,52 +256,66 @@
     <section class="work-section" id="work">
       <div class="work-inner">
         <h2 class="reveal">Work</h2>
-        <p>
+
+        <p class="work-intro">
           I spent the last 4 years at my last role, so most of my current
-          portfolio does center around that time. However, I have also been
-          working on some personal projects in my own time to keep my skills
-          sharp and experiment with new ideas. I have split these two sections
-          so you can learn about both my commercial work and my self-development
-          projects.
+          portfolio centers around that time. Alongside this, I’ve worked on
+          personal projects to experiment and keep my skills sharp. Below is a
+          split between my commercial work and self-development projects.
         </p>
-        <!-- COMMERCIAL -->
+
+        <!-- COMMERCIAL WORK -->
         <div class="work-group reveal">
           <h3 class="work-title">Commercial Work</h3>
 
           <div class="work-grid">
             <article class="work-item">
-              <img src="images/work/work1.png" alt="Project name" />
+              <img src="images/work/portfolio-1.png" alt="Scanshots project" />
               <div class="work-dark"></div>
+
               <div class="work-overlay">
                 <h4>Scanshots</h4>
-                <p>SCAN's email marketing mailout. Designed and coded by me.</p>
-                <a href="project-commercial-1.html">View project</a>
+                <p>SCAN email marketing campaign. Designed and coded by me.</p>
+                <a href="project-commercial-1.html" class="work-link">
+                  View project
+                </a>
               </div>
             </article>
 
             <article class="work-item">
-              <img src="images/work/work2.png" alt="Project name" />
+              <img
+                src="images/work/portfolio-2.png"
+                alt="Branded pages project"
+              />
               <div class="work-dark"></div>
+
               <div class="work-overlay">
                 <h4>Branded Pages</h4>
                 <p>
-                  Working with companies like NVIDIA and AMD to bring sponsored
-                  content to SCAN.
+                  Sponsored content for brands including NVIDIA and AMD at SCAN.
                 </p>
-                <a href="project-commercial-2.html">View project</a>
+                <a href="project-commercial-2.html" class="work-link">
+                  View project
+                </a>
               </div>
             </article>
 
             <article class="work-item">
-              <img src="images/work/work3.png" alt="Project name" />
+              <img
+                src="images/work/portfolio-3.png"
+                class="pos-top"
+                alt="3XS Custom Builds"
+              />
               <div class="work-dark"></div>
+
               <div class="work-overlay">
                 <h4>3XS Custom Builds</h4>
                 <p>
-                  HBespoke, high quality pages to showcase some of SCAN's custom
-                  built PC's.
+                  Bespoke product pages showcasing SCAN’s high-end custom PCs.
                 </p>
-                <a href="project-commercial-3.html">View project</a>
+                <a href="project-commercial-3.html" class="work-link">
+                  View project
+                </a>
               </div>
             </article>
           </div>
@@ -305,40 +326,149 @@
           <h3 class="work-title">Self-Development</h3>
 
           <div class="work-grid">
-            <!-- Repeat 6 times -->
             <article class="work-item">
-              <img src="images/work/work4.png" alt="Project name" />
+              <img
+                src="images/work/portfolio-4.png"
+                class="left-pos"
+                alt="React portfolio concept"
+              />
               <div class="work-dark"></div>
+
               <div class="work-overlay">
-                <h4>Personal Project</h4>
-                <p>A portfolio website idea built in React.</p>
-                <a href="project-self-1.html">View project</a>
-              </div>
-            </article>
-            <article class="work-item">
-              <img src="images/work/work5.png" alt="Project name" />
-              <div class="work-dark"></div>
-              <div class="work-overlay">
-                <h4>Personal Project</h4>
-                <p>A backend dashboard built in React.</p>
-                <a href="project-self-1.html">View project</a>
-              </div>
-            </article>
-            <article class="work-item">
-              <img src="images/work/work6.png" alt="Project name" />
-              <div class="work-dark"></div>
-              <div class="work-overlay">
-                <h4>Personal Project</h4>
-                <p>A fictional restaurant website built in React.</p>
-                <a href="project-self-1.html">View project</a>
+                <h4>Portfolio Concept</h4>
+                <p>A React-based portfolio experiment.</p>
+                <a href="project-development-1.html" class="work-link">
+                  View project
+                </a>
               </div>
             </article>
 
-            <!-- … 5 more -->
+            <article class="work-item">
+              <img src="images/work/portfolio-5.png" alt="Dashboard project" />
+              <div class="work-dark"></div>
+
+              <div class="work-overlay">
+                <h4>Dashboard UI</h4>
+                <p>A backend dashboard interface built in React.</p>
+                <a href="project-development-2.html" class="work-link">
+                  View project
+                </a>
+              </div>
+            </article>
+
+            <article class="work-item">
+              <img
+                src="images/work/portfolio-6.png"
+                class="left-pos"
+                alt="Restaurant website project"
+              />
+              <div class="work-dark"></div>
+
+              <div class="work-overlay">
+                <h4>React Portfolio</h4>
+                <p>My old portfolio website.</p>
+                <a href="project-development-3.html" class="work-link">
+                  View project
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-inner">
+        <h2 class="reveal">Contact</h2>
+
+        <p class="contact-intro">
+          If you’d like to discuss a project, collaboration, or just say hello,
+          feel free to get in touch.
+        </p>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xrbndkrd"
+          method="POST"
+        >
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <!-- Logo -->
+        <div class="footer-left">
+          <a href="#hero" class="footer-logo">
+            <img
+              src="images/logo.png"
+              class="logo-default"
+              alt="Warren Jay Pearson"
+            />
+            <img
+              src="images/logo-hover.png"
+              class="logo-hover"
+              alt="Warren Jay Pearson"
+            />
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-center">
+          © <span id="year"></span> Warren Jay Pearson
+        </div>
+
+        <!-- Social links -->
+        <div class="footer-right">
+          <a href="mailto:warren.pearson89@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/warren-jay-pearson-2b217642/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="https://github.com/driggy769"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a
+            href="https://instagram.com/warreninpixels"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
 
     <script src="main.js"></script>
   </body>

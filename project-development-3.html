@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Portfolio | Project</title>
+
+    <!-- main site styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- project-specific styles -->
+    <link rel="stylesheet" href="project.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="index.html#hero" class="logo">
+        <img src="images/logo.png" class="logo-default" alt="" />
+        <img src="images/logo-hover.png" class="logo-hover" alt="" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#work" class="active">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- PROJECT PAGE WRAPPER (NEBULA BG) -->
+    <div class="project-page">
+      <!-- HERO -->
+      <header class="project-hero">
+        <img src="images/work/portfolio-6.png" alt="Pearsteen's Burger Joint" />
+        <div class="project-hero-overlay">
+          <div class="project-hero-inner">
+            <h1>React Portfolio</h1>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="project-content">
+        <section class="project-text">
+          <h2>
+            Project Overview: React Portfolio Application (Personal Development
+            Project)
+          </h2>
+
+          <p>
+            This project was a self-initiated React application created in my
+            own time as a culmination of my learning journey with the framework.
+            Unlike earlier projects that focused on individual concepts, this
+            application was designed to bring together multiple aspects of React
+            into a single, cohesive project.
+          </p>
+
+          <p>
+            The project takes the form of a portfolio-style application,
+            intended to explore how React can be used to structure and present
+            content across multiple sections while maintaining a consistent user
+            experience. It was built purely as a learning exercise and was not
+            intended for commercial use.
+          </p>
+
+          <h2>Learning Goals & Motivation</h2>
+
+          <p>
+            The main objective of this project was to consolidate everything I
+            had learned in previous React projects and apply it in a more
+            complete, real-world style application. Rather than focusing on a
+            single feature or concept, the aim was to build something that felt
+            closer to a production-ready front-end experience.
+          </p>
+
+          <p>
+            This included thinking about overall application structure,
+            component hierarchy, and how different parts of the interface
+            connect and interact with one another.
+          </p>
+
+          <h2>Development Process</h2>
+
+          <p>
+            The application was broken down into modular, reusable components to
+            ensure maintainability and clarity. Care was taken to structure the
+            project in a way that would scale, reflecting patterns commonly used
+            in larger React applications.
+          </p>
+
+          <p>
+            State and props were used to manage and distribute content across
+            the application, reinforcing an understanding of data flow and
+            component communication. This allowed the interface to remain
+            dynamic while still being easy to reason about.
+          </p>
+
+          <h2>Technical Learning & Outcomes</h2>
+
+          <p>
+            By completing this project, I was able to solidify my understanding
+            of React fundamentals, including component composition, state
+            management, and rendering dynamic content. Bringing these concepts
+            together in a single project helped reinforce best practices and
+            highlighted areas for further improvement.
+          </p>
+
+          <p>
+            This project represents a key milestone in my React learning
+            journey, demonstrating progression from basic component-based
+            layouts to more structured, data-aware applications built with
+            maintainability and scalability in mind.
+          </p>
+        </section>
+
+        <div class="project-cta">
+          <a
+            href="https://portfolio-project-dun-chi.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-demo-link"
+          >
+            View live demo →
+          </a>
+        </div>
+
+        <!-- CAROUSEL -->
+        <section class="project-carousel">
+          <h2>Gallery</h2>
+
+          <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Previous image">
+              ‹
+            </button>
+
+            <div class="carousel-track">
+              <img src="images/work/project6/1.png" alt="" />
+              <img src="images/work/project6/2.png" alt="" />
+              <img src="images/work/project6/3.png" alt="" />
+            </div>
+
+            <button class="carousel-btn next" aria-label="Next image">›</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="project.js"></script>
+  </body>
+</html>

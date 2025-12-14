@@ -1,0 +1,322 @@
+/* =========================
+   PROJECT PAGE BASE
+========================= */
+
+.project-page {
+  position: relative;
+  min-height: 100vh;
+  background: #0b0b0f;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* =========================
+   NEBULA BACKGROUND
+========================= */
+
+.project-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background: radial-gradient(
+      600px 600px at 20% 30%,
+      rgba(164, 12, 117, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      500px 500px at 80% 40%,
+      rgba(220, 47, 79, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 700px at 50% 80%,
+      rgba(59, 130, 246, 0.18),
+      transparent 65%
+    );
+
+  filter: blur(40px);
+  animation: nebulaDrift 20s ease-in-out infinite;
+}
+
+.project-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: radial-gradient(
+      1.2px 1.2px at 20% 30%,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    radial-gradient(
+      1.2px 1.2px at 80% 40%,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(
+      1.4px 1.4px at 10% 80%,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    ),
+    radial-gradient(2px 2px at 90% 10%, rgba(255, 255, 255, 0.9), transparent);
+
+  background-size: 200px 200px;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes nebulaDrift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, 2%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   PROJECT HERO
+========================= */
+
+.project-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 360px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.project-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay */
+.project-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start; /* FORCE LEFT */
+
+  padding: 64px 0 80px; /* no horizontal padding */
+  text-align: left;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* inner width match */
+.project-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+/* force H1 to never center */
+.project-hero-overlay h1 {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  line-height: 1.1;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
+.project-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 8% 120px;
+}
+
+.project-text {
+  margin-bottom: 96px;
+}
+
+.project-text h2 {
+  margin-bottom: 24px;
+}
+
+.project-text p {
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+
+.project-carousel h2 {
+  margin-bottom: 24px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-btn.prev {
+  left: 12px;
+}
+.carousel-btn.next {
+  right: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .project-hero {
+    height: 50vh;
+  }
+
+  .project-content {
+    padding: 64px 5% 96px;
+  }
+
+  .project-text p {
+    max-width: 100%;
+  }
+}
+
+.project-hero h1 {
+  text-align: left !important;
+}
+
+/* =========================================
+   FORCE HERO TITLE LEFT (NUCLEAR OVERRIDES)
+   ========================================= */
+
+.project-page .project-hero .project-hero-overlay {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.project-page .project-hero .project-hero-overlay .project-hero-inner {
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding: 0 8%;
+  text-align: left !important;
+
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+}
+
+.project-page .project-hero .project-hero-overlay .project-hero-inner h1 {
+  margin: 0 !important;
+  width: auto !important;
+
+  text-align: left !important;
+
+  /* kill any global centering tricks */
+  transform: none !important;
+  left: auto !important;
+  right: auto !important;
+  translate: none !important;
+}
+
+/* =========================
+   PROJECT DEMO LINK
+========================= */
+
+.project-cta {
+  margin-bottom: 96px;
+}
+
+.project-demo-link {
+  position: relative;
+  display: inline-block;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+
+  padding-bottom: 6px;
+}
+
+/* accent underline */
+.project-demo-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(90deg, #fcd702, #dc2f4f, #a40c75);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+/* hover + focus */
+.project-demo-link:hover::after,
+.project-demo-link:focus-visible::after {
+  transform: scaleX(1);
+}
